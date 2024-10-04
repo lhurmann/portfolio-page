@@ -1,11 +1,20 @@
 import Image from "next/image";
 import SocialButton from "./components/SocialButton";
-import { ChevronDown, ChevronsDown } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronsDown,
+  Infinity,
+  LampDesk,
+  MonitorSmartphone,
+  Server,
+} from "lucide-react";
+import ProjectCard from "./components/ProjectCards";
+import ServiceCards from "./components/ServiceCards";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen bg-background">
-      <div className="flex h-full w-full flex-col items-center bg-mainBackground bg-cover bg-fixed px-40 pt-20">
+    <>
+      <div className="flex h-full w-full flex-col items-center bg-mainBackground bg-cover pt-20">
         <div className="relative">
           <Image
             className="rounded-full border-4 border-red p-2"
@@ -15,7 +24,7 @@ export default function Home() {
             alt={""}
           />
           <Image
-            src="/teste.svg"
+            src="/code.svg"
             width={60}
             height={60}
             alt={""}
@@ -53,6 +62,95 @@ export default function Home() {
 
         <ChevronsDown className="mt-16" color="gray" size={40} />
       </div>
-    </div>
+
+      <div className="flex h-full w-full flex-col items-center bg-background pt-40">
+        <div className="flex flex-col items-center">
+          <strong className="font-inconsolata text-subtitle text-red">
+            Meu trabalho
+          </strong>
+          <h3 className="text-titleMd font-asap font-semibold text-zinc-100">
+            Veja os projetos em destaque
+          </h3>
+        </div>
+
+        <div className="mt-20 grid grid-cols-3 gap-6 px-52">
+          <ProjectCard
+            projectPhoto="/cardImage1.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+          <ProjectCard
+            projectPhoto="/cardImage2.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+          <ProjectCard
+            projectPhoto="/cardImage3.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+          <ProjectCard
+            projectPhoto="/cardImage4.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+          <ProjectCard
+            projectPhoto="/cardImage5.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+          <ProjectCard
+            projectPhoto="/cardImage6.png"
+            projectTitle="Título do projeto"
+            projectDesc="Projeto focado em..."
+          />
+        </div>
+      </div>
+      <div className="h-full w-full bg-background pt-40">
+        <div className="flex flex-col items-center">
+          <strong className="font-inconsolata text-subtitle text-red">
+            Meus serviços
+          </strong>
+          <h3 className="text-titleMd font-asap font-semibold text-zinc-100">
+            Como posso ajudar o seu negócio
+          </h3>
+        </div>
+
+        <div className="mt-20 flex justify-around gap-6 px-52">
+          <ServiceCards
+            serviceIcon={MonitorSmartphone}
+            serviceColor="#3996DB"
+            serviceTitle="Websites e Aplicativos"
+            serviceDesc="Desenvolvimento de interfaces"
+          />
+          <ServiceCards
+            serviceIcon={Server}
+            serviceColor="#EABD5F"
+            serviceTitle="API e banco de dados"
+            serviceDesc="Criação de serviços do sistema"
+          />
+          <ServiceCards
+            serviceIcon={Infinity}
+            serviceColor="#82BC4F"
+            serviceTitle="DevOps"
+            serviceDesc="Gestão e infraestrutura da aplicação"
+          />
+        </div>
+      </div>
+      {/* <div className="bg-lastBackground h-full w-full bg-cover">
+        <div className="flex flex-col items-center">
+          <strong className="font-inconsolata text-subtitle text-purple">
+            Contato
+          </strong>
+          <h3 className="text-titleMd font-asap font-semibold text-zinc-100">
+            Gostou do meu trabalho?
+          </h3>
+          <p className="text-wrap font-mavenPro text-textSm font-normal text-zinc-400">
+            Entre em contato ou acompanhe as minhas redes sociais!
+          </p>
+        </div>
+        <div></div>
+      </div> */}
+    </>
   );
 }

@@ -23,6 +23,7 @@ const config: Config = {
       },
       backgroundImage: {
         mainBackground: "url('/mainBackground.png')",
+        lastBackground: "url('/lastBackground.png')",
       },
       fontSize: {
         subtitle: [
@@ -33,6 +34,18 @@ const config: Config = {
         ],
         titleLg: [
           "5rem",
+          {
+            fontWeight: "120",
+          },
+        ],
+        titleMd: [
+          "3rem",
+          {
+            fontWeight: "120",
+          },
+        ],
+        titleSm: [
+          "1.5rem",
           {
             fontWeight: "120",
           },
